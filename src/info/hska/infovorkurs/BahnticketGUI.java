@@ -632,7 +632,7 @@ public class BahnticketGUI extends javax.swing.JFrame {
 	 */
 	private void exceptionHandling(Exception ex) {
 		String msg;
-		if(!ex.getStackTrace()[0].getClassName().equals("de.fachschaft_hska.infovorkurs.Bahnticketautomat")) {
+		if(!ex.getStackTrace()[0].getClassName().equals("info.hska.infovorkurs.Bahnticketautomat")) {
 			JOptionPane.showMessageDialog(rootPane, 
 				"Es trat ein Fehler in der Datei BahnticketGUI.java auf.\n"
 				+ "Liegt also vermutlich nicht an dir. Lass am besten "
