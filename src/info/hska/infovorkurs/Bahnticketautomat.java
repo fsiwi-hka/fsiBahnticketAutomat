@@ -27,7 +27,16 @@ public class Bahnticketautomat {
 	 */
 	public static String[] addNewTicket(String[] oldTickets, String newTicket, boolean bahncard) {
 
-		return new String[0];
+                /*
+                 * Statt null muss hier ein String-Array zurückgegeben werden.
+                 * Dieses muss dafür natürlich zuerst erzeugt und befüllt werden.
+                 * Stark vereinfacht sieht das Ganze so aus:
+                 * String[] newTickets = new String[passendeLaenge];
+                 * ... (hier wird das Array befüllt)
+                 * return newTickets;
+                 */
+
+		return null;
 	}
 
 
@@ -150,12 +159,13 @@ public class Bahnticketautomat {
 
 
 	/**
-	 * Hier soll das Wechselgeld berechnet werden und in einem Array zurück
-	 * gegeben werden. Dabei soll die 1. Stelle des Arrays enthalten, wie viel 2€
-	 * Münzen, die 2. Stelle wie viel 1€ Münzen, 3. Stelle wie viel 50 Cent Münzen,
-	 * 4. Stelle wie viel 20 Cent Münzen, 5. Stelle wie viel 10 Cent Münzen,
-	 * 6. Stelle wie viel 5 Cent Münzen, 7. Stelle wie viel 2 Cent Stücke und
-	 * 8. Stelle wie viel 1 Cent Münzen als Wechselgeld zurück gegeben werden.
+	 * Hier soll das Wechselgeld berechnet und in einem Array zurückgegeben 
+         * werden. Dabei soll die 1. Stelle des Arrays enthalten, wie viele 2€
+	 * Münzen, die 2. Stelle wie viele 1€ Münzen, die 3. Stelle, wie viele 50
+         * Cent Münzen, die 4. Stelle, wie viele 20 Cent Münzen, die 5. Stelle,
+         * wie viele 10 Cent Münzen, die 6. Stelle, wie viele 5 Cent Münzen, die
+         * 7. Stelle, wie viele 2 Cent Stücke und die 8. Stelle, wie viele 1 Cent
+         * Münzen als Wechselgeld zurück gegeben werden.
 	 * Dabei sollen möglichst große Münzen zurück gegeben werden.
 	 *
 	 * 2,65 Euro sollten also als 1* 2€ Münze, 1* 50 Cent Münze, 1* 10 Cent Münze
