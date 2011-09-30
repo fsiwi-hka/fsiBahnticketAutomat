@@ -493,97 +493,97 @@ public class BahnticketGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void abfahrtsbahnhofActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abfahrtsbahnhofActionPerformed
-	    JOptionPane.showMessageDialog(rootPane, "Der Abfahrtsbahnhof kann nicht geändert werden.\nBitte wenden Sie sich an einen Ticketschalter.");
+		JOptionPane.showMessageDialog(rootPane, "Der Abfahrtsbahnhof kann nicht geändert werden.\nBitte wenden Sie sich an einen Ticketschalter.");
     }//GEN-LAST:event_abfahrtsbahnhofActionPerformed
 
     private void weitereBahnhoefeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weitereBahnhoefeActionPerformed
-	    JOptionPane.showMessageDialog(rootPane, "Es gibt keine anderen Bahnhöfe...\nWo wollten Sie denn hin? Nach Bielefeld etwa...\nIch sagte doch, es gibt keine...",
-		    "Error 404!", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(rootPane, "Es gibt keine anderen Bahnhöfe...\nWo wollten Sie denn hin? Nach Bielefeld etwa...\nIch sagte doch, es gibt keine...",
+				"Error 404!", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_weitereBahnhoefeActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-	    try {
-		    Bahnticketautomat.calculateNewSum(298, bahncard.isSelected());
-		    String[] tmpTickets = Bahnticketautomat.addNewTicket(tickets, "München", bahncard.isSelected());
-		    if (tmpTickets == null) {
-			return;
-		    }
-		    tickets = tmpTickets;
-		    refreshPrice();
-	    } catch (Exception ex) {
-		    exceptionHandling(ex);
-	    }
+		try {
+			Bahnticketautomat.calculateNewSum(298, bahncard.isSelected());
+			String[] tmpTickets = Bahnticketautomat.addNewTicket(tickets, "München", bahncard.isSelected());
+			if (tmpTickets == null) {
+				return;
+			}
+			tickets = tmpTickets;
+			refreshPrice();
+		} catch (Exception ex) {
+			exceptionHandling(ex);
+		}
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void frankfurtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frankfurtActionPerformed
-	    try {
-		    Bahnticketautomat.calculateNewSum(141, bahncard.isSelected());
-		    String[] tmpTickets = Bahnticketautomat.addNewTicket(tickets, "Frankfurt", bahncard.isSelected());
-		    if (tmpTickets == null) {
-			return;
-		    }
-		    tickets = tmpTickets;
-		    refreshPrice();
-	    } catch (Exception ex) {
-		    exceptionHandling(ex);
-	    }
+		try {
+			Bahnticketautomat.calculateNewSum(141, bahncard.isSelected());
+			String[] tmpTickets = Bahnticketautomat.addNewTicket(tickets, "Frankfurt", bahncard.isSelected());
+			if (tmpTickets == null) {
+				return;
+			}
+			tickets = tmpTickets;
+			refreshPrice();
+		} catch (Exception ex) {
+			exceptionHandling(ex);
+		}
     }//GEN-LAST:event_frankfurtActionPerformed
 
     private void ticketsLoeschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticketsLoeschenActionPerformed
-	    try {
-		    tickets = new String[0];
-		    Bahnticketautomat.resetSum();
-		    refreshPrice();
-	    } catch (Exception ex) {
-		    exceptionHandling(ex);
-	    }
+		try {
+			tickets = new String[0];
+			Bahnticketautomat.resetSum();
+			refreshPrice();
+		} catch (Exception ex) {
+			exceptionHandling(ex);
+		}
     }//GEN-LAST:event_ticketsLoeschenActionPerformed
 
     private void bezahlenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bezahlenActionPerformed
-	    ticketPanel.setVisible(false);
-	    payPanel.setVisible(true);
-	    jPanel1.updateUI();
-	    Bahnticketautomat.beginPayment();
-	    abfahrtsbahnhof.setEnabled(false);
-	    zielbahnhof.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-	    zielbahnhof.setText("<html><strong>Zielbahnhof:</strong><br><i><font color='gray'>&lt; bitte auswählen &gt;</font></i></html>");
-	    bezahlen.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null));
-	    bezahlen.setEnabled(false);
-	    rueckgeld.setVisible(false);
-	    refreshPayment(0);
+		ticketPanel.setVisible(false);
+		payPanel.setVisible(true);
+		jPanel1.updateUI();
+		Bahnticketautomat.beginPayment();
+		abfahrtsbahnhof.setEnabled(false);
+		zielbahnhof.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+		zielbahnhof.setText("<html><strong>Zielbahnhof:</strong><br><i><font color='gray'>&lt; bitte auswählen &gt;</font></i></html>");
+		bezahlen.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.red, null));
+		bezahlen.setEnabled(false);
+		rueckgeld.setVisible(false);
+		refreshPayment(0);
     }//GEN-LAST:event_bezahlenActionPerformed
 
 	// <editor-fold defaultstate="collapsed" desc="Geldscheine einwerfen">
     private void euro5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_euro5ActionPerformed
-	    refreshPayment(5);
+		refreshPayment(5);
     }//GEN-LAST:event_euro5ActionPerformed
 
     private void euro10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_euro10ActionPerformed
-	    refreshPayment(10);
+		refreshPayment(10);
     }//GEN-LAST:event_euro10ActionPerformed
 
     private void euro20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_euro20ActionPerformed
-	    refreshPayment(20);
+		refreshPayment(20);
     }//GEN-LAST:event_euro20ActionPerformed
 
     private void euro50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_euro50ActionPerformed
-	    refreshPayment(50);
+		refreshPayment(50);
     }//GEN-LAST:event_euro50ActionPerformed
 
     private void euro100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_euro100ActionPerformed
-	    refreshPayment(100);
+		refreshPayment(100);
     }//GEN-LAST:event_euro100ActionPerformed
 
 	// </editor-fold>
-
 	/**
 	 * Aktualisiert den noch zu bezahlenden Betrag und zeigt gegebenenfalls das
 	 * Rückgeld an.
 	 */
 	private void refreshPayment(int amount) {
 		try {
-			if(amount != 0)
+			if (amount != 0) {
 				Bahnticketautomat.insertMoney(amount);
+			}
 			zuzahlen.setText(String.format("Noch zu zahlen: %.2f EUR", Bahnticketautomat.getAmountLeft()));
 			if (!Bahnticketautomat.isAmountLeft()) {
 				euro5.setEnabled(false);
@@ -598,8 +598,8 @@ public class BahnticketGUI extends javax.swing.JFrame {
 
 				if (rueck == null || rueck.length != 8) {
 					JOptionPane.showMessageDialog(rootPane,
-						"Der Rückgeld Array muss genau 8 Elemente haben.",
-						"Rückgeld Fehler", JOptionPane.ERROR_MESSAGE);
+							"Der Rückgeld Array muss genau 8 Elemente haben.",
+							"Rückgeld Fehler", JOptionPane.ERROR_MESSAGE);
 				} else {
 					euro2.setText(rueck[0] + "x");
 					euro1.setText(rueck[1] + "x");
@@ -640,25 +640,25 @@ public class BahnticketGUI extends javax.swing.JFrame {
 	 */
 	private void exceptionHandling(Exception ex) {
 		String msg;
-		if(!Bahnticketautomat.class.getName().equals(ex.getStackTrace()[0].getClassName())) {
-			JOptionPane.showMessageDialog(rootPane, 
-				"Es trat ein Fehler in der Datei BahnticketGUI.java auf.\n"
-				+ "Liegt also vermutlich nicht an dir. Lass am besten "
-				+ "mal einen Betreuer drüber schauen.");
+		if (!Bahnticketautomat.class.getName().equals(ex.getStackTrace()[0].getClassName())) {
+			JOptionPane.showMessageDialog(rootPane,
+					"Es trat ein Fehler in der Datei BahnticketGUI.java auf.\n"
+					+ "Liegt also vermutlich nicht an dir. Lass am besten "
+					+ "mal einen Betreuer drüber schauen.");
 			return;
 		}
-		
-		if(ex.getClass() == ArrayIndexOutOfBoundsException.class) {
+
+		if (ex.getClass() == ArrayIndexOutOfBoundsException.class) {
 			msg = "Du versuchst auf ein Element eines Arrays zuzugreifen, "
-				+ "das es nicht gibt.\nDenk daran, dass das 1. Array Element "
-				+ "den Index 0 hat.";
+					+ "das es nicht gibt.\nDenk daran, dass das 1. Array Element "
+					+ "den Index 0 hat.";
 		} else {
 			msg = ex.getMessage();
 		}
 		JOptionPane.showMessageDialog(rootPane,
-			"Es trat ein Fehler in Zeile " + ex.getStackTrace()[0].getLineNumber() + " auf.\n\n"
-			+ msg);
-		
+				"Es trat ein Fehler in Zeile " + ex.getStackTrace()[0].getLineNumber() + " auf.\n\n"
+				+ msg);
+
 	}
 
 	/**

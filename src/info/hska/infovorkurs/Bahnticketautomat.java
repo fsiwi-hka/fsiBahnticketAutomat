@@ -4,7 +4,7 @@ public class Bahnticketautomat {
 
 	// Klassenvariablen hierhin
 
-
+	
 	/**
 	 * In dieser Methode wird ein neues Ticket der Liste aller bisher
 	 * gebuchten Tickets hinzugefügt. Dazu soll an das Array oldTickets ein
@@ -27,18 +27,17 @@ public class Bahnticketautomat {
 	 */
 	public static String[] addNewTicket(String[] oldTickets, String newTicket, boolean bahncard) {
 
-                /*
-                 * Statt null muss hier ein String-Array zurückgegeben werden.
-                 * Dieses muss dafür natürlich zuerst erzeugt und befüllt werden.
-                 * Stark vereinfacht sieht das Ganze so aus:
-                 * String[] newTickets = new String[passendeLaenge];
-                 * ... (hier wird das Array befüllt)
-                 * return newTickets;
-                 */
+		/*
+		 * Statt null muss hier ein String-Array zurückgegeben werden.
+		 * Dieses muss dafür natürlich zuerst erzeugt und befüllt werden.
+		 * Stark vereinfacht sieht das Ganze so aus:
+		 * String[] newTickets = new String[passendeLaenge];
+		 * ... (hier wird das Array befüllt)
+		 * return newTickets;
+		 */
 
 		return null;
 	}
-
 
 	/**
 	 * Hier sollte der neue Gesamtpreis aller bisher ausgewählten Tickets
@@ -63,9 +62,8 @@ public class Bahnticketautomat {
 	 */
 	public static void calculateNewSum(int distance, boolean bahncard) {
 
-	
-	}
 
+	}
 
 	/**
 	 * Diese Methode soll den Gesamtenpreis aller bisher ausgewählten
@@ -76,9 +74,8 @@ public class Bahnticketautomat {
 	public static double getSum() {
 
 		return 0.0;
-		
-	}
 
+	}
 
 	/**
 	 * Hier soll der Gesamtpreis der bisher gekauften Tickets zurück gesetzt
@@ -86,8 +83,8 @@ public class Bahnticketautomat {
 	 */
 	public static void resetSum() {
 
-	}
 
+	}
 
 	/**
 	 * Diese Methode wird aufgerufen, sobald der Bezahlvorgang begonnen wird.
@@ -101,8 +98,8 @@ public class Bahnticketautomat {
 	 */
 	public static void beginPayment() {
 
+
 	}
-	
 
 	/**
 	 * Diese Methode wird aufgerufen, wenn der Kunde beim Bezahlen einen
@@ -113,8 +110,8 @@ public class Bahnticketautomat {
 	 */
 	public static void insertMoney(int amount) {
 
-	}
 
+	}
 
 	/**
 	 * Hier wird der noch zu bezahlende Betrag abgefragt.
@@ -124,9 +121,8 @@ public class Bahnticketautomat {
 	public static double getAmountLeft() {
 
 		return 0.0;
-		
-	}
 
+	}
 
 	/**
 	 * Diese Methode wird benutzt, um zu überprüfen, ob noch ein Restbetrag
@@ -140,8 +136,8 @@ public class Bahnticketautomat {
 	public static boolean isAmountLeft() {
 
 		return true;
-	}
 
+	}
 
 	/**
 	 * Gibt den Betrag des Wechselgelds zurück. Wird aufgerufen, sobald
@@ -154,9 +150,8 @@ public class Bahnticketautomat {
 	public static double getChangeAmount() {
 
 		return 0.0;
-		
-	}
 
+	}
 
 	/**
 	 * Hier soll das Wechselgeld berechnet und in einem Array zurückgegeben 
@@ -179,7 +174,6 @@ public class Bahnticketautomat {
 	public static int[] getChangeCoins() {
 
 		return null;
-		
-	}
 
+	}
 }
