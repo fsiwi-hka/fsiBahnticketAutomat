@@ -504,10 +504,10 @@ public class BahnticketGUI extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 	    try {
 		    Bahnticketautomat.calculateNewSum(298, bahncard.isSelected());
-                    String[] tmpTickets = Bahnticketautomat.addNewTicket(tickets, "München", bahncard.isSelected());
-                    if (tmpTickets == null) {
-                        return;
-                    }
+		    String[] tmpTickets = Bahnticketautomat.addNewTicket(tickets, "München", bahncard.isSelected());
+		    if (tmpTickets == null) {
+			return;
+		    }
 		    tickets = tmpTickets;
 		    refreshPrice();
 	    } catch (Exception ex) {
@@ -518,10 +518,10 @@ public class BahnticketGUI extends javax.swing.JFrame {
     private void frankfurtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frankfurtActionPerformed
 	    try {
 		    Bahnticketautomat.calculateNewSum(141, bahncard.isSelected());
-                    String[] tmpTickets = Bahnticketautomat.addNewTicket(tickets, "Frankfurt", bahncard.isSelected());
-                    if (tmpTickets == null) {
-                        return;
-                    }
+		    String[] tmpTickets = Bahnticketautomat.addNewTicket(tickets, "Frankfurt", bahncard.isSelected());
+		    if (tmpTickets == null) {
+			return;
+		    }
 		    tickets = tmpTickets;
 		    refreshPrice();
 	    } catch (Exception ex) {

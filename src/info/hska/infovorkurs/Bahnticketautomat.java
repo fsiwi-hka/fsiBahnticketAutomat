@@ -20,7 +20,7 @@ public class Bahnticketautomat {
 	 *	gegeben werden, der folgende Werte enthält:
 	 *	{"Frankfurt","München","München (Bahncard)","Frankfurt (Bahncard)"}
 	 *
-	 * @param oldTickets Das Array mit allen bisherig gebuchten Tickets.
+	 * @param oldTickets Das Array mit allen bisher gebuchten Tickets.
 	 * @param newTicket Die Stadt, zu der das neue Ticket gebucht werden soll.
 	 * @param bahncard Gibt an, ob eine Bahncard für dieses Ticket angegeben wurde.
 	 * @return Ein Array, der das neue Ticket mit beinhaltet.
@@ -69,7 +69,7 @@ public class Bahnticketautomat {
 
 	/**
 	 * Diese Methode soll den Gesamtenpreis aller bisher ausgewählten
-	 * Tickets in Euro zurück geben.
+	 * Tickets in Euro zurückgeben.
 	 *
 	 * @return Gesamtpreis aller Tickets in Euro
 	 */
@@ -105,18 +105,6 @@ public class Bahnticketautomat {
 	
 
 	/**
-	 * Hier wird der noch zu bezahlende Betrag abgefragt.
-	 *
-	 * @return Noch zu bezahlender Betrag in Euro
-	 */
-	public static double getAmountLeft() {
-
-		return 0.0;
-		
-	}
-
-
-	/**
 	 * Diese Methode wird aufgerufen, wenn der Kunde beim Bezahlen einen
 	 * Geldschein einführt. Der noch zu bezahlende Betrag muss dementsprechend
 	 * angepasst werden.
@@ -129,9 +117,21 @@ public class Bahnticketautomat {
 
 
 	/**
-	 * Diese Methode wird benutzt zum Überprüfen, ob noch ein Restbetrag
+	 * Hier wird der noch zu bezahlende Betrag abgefragt.
+	 *
+	 * @return Noch zu bezahlender Betrag in Euro
+	 */
+	public static double getAmountLeft() {
+
+		return 0.0;
+		
+	}
+
+
+	/**
+	 * Diese Methode wird benutzt, um zu überprüfen, ob noch ein Restbetrag
 	 * zu zahlen ist. Die Methode soll true zurück geben, falls noch Geld
-	 * zu bezahlen ist.0.0
+	 * zu bezahlen ist.
 	 *
 	 * @return
 	 *	True, falls noch Geld zu bezahlen ist.
@@ -160,12 +160,12 @@ public class Bahnticketautomat {
 
 	/**
 	 * Hier soll das Wechselgeld berechnet und in einem Array zurückgegeben 
-         * werden. Dabei soll die 1. Stelle des Arrays enthalten, wie viele 2€
+	 * werden. Dabei soll die 1. Stelle des Arrays enthalten, wie viele 2€
 	 * Münzen, die 2. Stelle wie viele 1€ Münzen, die 3. Stelle, wie viele 50
-         * Cent Münzen, die 4. Stelle, wie viele 20 Cent Münzen, die 5. Stelle,
-         * wie viele 10 Cent Münzen, die 6. Stelle, wie viele 5 Cent Münzen, die
-         * 7. Stelle, wie viele 2 Cent Stücke und die 8. Stelle, wie viele 1 Cent
-         * Münzen als Wechselgeld zurück gegeben werden.
+	 * Cent Münzen, die 4. Stelle, wie viele 20 Cent Münzen, die 5. Stelle,
+	 * wie viele 10 Cent Münzen, die 6. Stelle, wie viele 5 Cent Münzen, die
+	 * 7. Stelle, wie viele 2 Cent Stücke und die 8. Stelle, wie viele 1 Cent
+	 * Münzen als Wechselgeld zurück gegeben werden.
 	 * Dabei sollen möglichst große Münzen zurück gegeben werden.
 	 *
 	 * 2,65 Euro sollten also als 1* 2€ Münze, 1* 50 Cent Münze, 1* 10 Cent Münze
