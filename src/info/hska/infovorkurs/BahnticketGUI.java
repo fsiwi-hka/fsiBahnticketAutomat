@@ -632,7 +632,7 @@ public class BahnticketGUI extends javax.swing.JFrame {
 	 */
 	private void exceptionHandling(Exception ex) {
 		String msg;
-		if(!ex.getStackTrace()[0].getClassName().equals("info.hska.infovorkurs.Bahnticketautomat")) {
+		if(!Bahnticketautomat.class.getName().equals(ex.getStackTrace()[0].getClassName())) {
 			JOptionPane.showMessageDialog(rootPane, 
 				"Es trat ein Fehler in der Datei BahnticketGUI.java auf.\n"
 				+ "Liegt also vermutlich nicht an dir. Lass am besten "
@@ -640,7 +640,7 @@ public class BahnticketGUI extends javax.swing.JFrame {
 			return;
 		}
 		
-		if(ex.getClass().getSimpleName().equals("ArrayIndexOutOfBoundsException")) {
+		if(ex.getClass() == ArrayIndexOutOfBoundsException.class) {
 			msg = "Du versuchst auf ein Element eines Arrays zuzugreifen, "
 				+ "das es nicht gibt.\nDenk daran, dass das 1. Array Element "
 				+ "den Index 0 hat.";
