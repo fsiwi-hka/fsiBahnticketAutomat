@@ -196,15 +196,12 @@ public class BahnticketautomatLoesung {
 
 		summe *= -1;
 		int[] rueckgeld = new int[8];
-
-		while(summe >= 200) { summe -= 200; rueckgeld[0]++; }
-		while(summe >= 100) { summe -= 100; rueckgeld[1]++; }
-		while(summe >= 50) { summe -= 50; rueckgeld[2]++; }
-		while(summe >= 20) {summe -= 20; rueckgeld[3]++; }
-		while(summe >= 10) { summe -= 10; rueckgeld[4]++; }
-		while(summe >= 5) { summe -= 5; rueckgeld[5]++; }
-		while(summe >= 2) { summe -= 2; rueckgeld[6]++; }
-		while(summe >= 1) { summe -= 1; rueckgeld[7]++; }
+		int[] muenzen = {200, 100, 50, 20, 10, 5, 2, 1};
+		
+		for(int i = 0; i < rueckgeld.length; i++) {
+		   rueckgeld[i] = summe / muenzen[i];
+		   summe = summe % muenzen[i];
+		}
 
 		return rueckgeld;
 	}
