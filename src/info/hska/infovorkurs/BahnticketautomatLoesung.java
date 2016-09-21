@@ -4,7 +4,7 @@ public class BahnticketautomatLoesung {
 
 	// Klassenvariablen hierhin
 
-	public static int summe;
+	public static int gesamtkosten;
 
 
 	/**
@@ -30,16 +30,19 @@ public class BahnticketautomatLoesung {
 	public static String[] addNewTicket(String[] oldTickets, String newTicket, boolean bahncard) {
 
 		String[] newTickets = new String[oldTickets.length + 1];
-
+		String addToNewTicket = "";
+		
+		
 		for(int i = 0; i < oldTickets.length; i++) {
 			newTickets[i] = oldTickets[i];
 		}
 
 		if(bahncard)
-			newTickets[oldTickets.length] = newTicket + " (Bahncard)";
-		else
-			newTickets[oldTickets.length] = newTicket;
-
+			addToNewTicket = " (Bahncard)";
+		}
+		
+		newTickets[oldTickets.length] = newTicket + addToNewTicket;
+		
 		return newTickets;
 	}
 
@@ -69,17 +72,17 @@ public class BahnticketautomatLoesung {
 
 		int ticketPreis;
 
-		if(distance > 200) {
-			ticketPreis = 500 + 15*distance;
+		if(distance <= 200) {
+			ticketPreis = 1000 + 20 * distance;
 		} else {
-			ticketPreis = 1000 + 20*distance;
+			ticketPreis = 500 + 15 * distance;
 		}
 
 		if(bahncard) {
-			summe = (int)(summe + ticketPreis*0.75);
-		} else {
-			summe = summe + ticketPreis;
-		}
+			ticketPreis = (int)(ticketPreis * 0.75);
+		} 
+		
+		gesamtkosten = gesamtkosten + ticketPreis;
 
 	}
 
@@ -92,7 +95,7 @@ public class BahnticketautomatLoesung {
 	 */
 	public static double getSum() {
 
-		return summe / 100.0;
+		return gesamtkosten / 100.0;
 	}
 
 
@@ -102,7 +105,7 @@ public class BahnticketautomatLoesung {
 	 */
 	public static void resetSum() {
 
-		summe = 0;
+		gesamtkosten = 0;
 	}
 
 
@@ -128,7 +131,7 @@ public class BahnticketautomatLoesung {
 	 */
 	public static double getAmountLeft() {
 
-		return summe / 100.0;
+		return gesamtkosten / 100.0;
 	}
 
 
@@ -141,7 +144,7 @@ public class BahnticketautomatLoesung {
 	 */
 	public static void insertMoney(int amount) {
 
-		summe -= amount * 100;
+		gesamtkosten -= amount * 100;
 
 	}
 
@@ -149,15 +152,20 @@ public class BahnticketautomatLoesung {
 	/**
 	 * Diese Methode wird benutzt zum Überprüfen, ob noch ein Restbetrag
 	 * zu zahlen ist. Die Methode soll true zurück geben, falls noch Geld
-	 * zu bezahlen ist.0.0
+	 * zu bezahlen ist.
 	 *
 	 * @return
 	 *	True, falls noch Geld zu bezahlen ist.
 	 *	False, wenn der volle Betrag eingeworfen wurde.
 	 */
 	public static boolean isAmountLeft() {
-
-		return summe > 0;
+		boolean amountLeft = true;
+		
+		if(gesamtkosten <= 0){
+			amountLeft = false;
+		}
+		
+		return amountLeft;
 	}
 
 
@@ -171,7 +179,7 @@ public class BahnticketautomatLoesung {
 	 */
 	public static double getChangeAmount() {
 
-		return summe / -100.0;
+		return (gesamtkosten / 100.0) * (-1);
 	}
 
 
@@ -194,13 +202,13 @@ public class BahnticketautomatLoesung {
 	 */
 	public static int[] getChangeCoins() {
 
-		summe *= -1;
+		gesamtkosten *= -1;
 		int[] rueckgeld = new int[8];
 		int[] muenzen = {200, 100, 50, 20, 10, 5, 2, 1};
 		
-		for(int i = 0; i < rueckgeld.length; i++) {
-		   rueckgeld[i] = summe / muenzen[i];
-		   summe = summe % muenzen[i];
+		for(int i = 0; i < muenzen.length; i++) {
+		   rueckgeld[i] = gesamtkosten / muenzen[i];
+		   gesamtkosten = gesamtkosten % muenzen[i];
 		}
 
 		return rueckgeld;
