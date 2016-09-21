@@ -37,7 +37,7 @@ public class BahnticketautomatLoesung {
 			newTickets[i] = oldTickets[i];
 		}
 
-		if(bahncard)
+		if(bahncard){
 			addToNewTicket = " (Bahncard)";
 		}
 		
