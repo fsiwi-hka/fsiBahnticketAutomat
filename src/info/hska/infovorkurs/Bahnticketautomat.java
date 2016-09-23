@@ -4,7 +4,7 @@ public class Bahnticketautomat {
 
 	// Klassenvariablen hierhin
 
-	
+
 	/**
 	 * In dieser Methode wird ein neues Ticket der Liste aller bisher
 	 * gebuchten Tickets hinzugefügt. Dazu soll an das Array oldTickets ein
@@ -15,7 +15,7 @@ public class Bahnticketautomat {
 	 * Beispiel:
 	 *	oldTickets enthält die Werte {"Frankfurt","München","München (Bahncard)"}
 	 *	Man aktiviert nun die Bahncard und klickt auf Frankfurt, dann
-	 *	wird diese Methode aufgerufen mit newTicket = "München" und
+	 *	wird diese Methode aufgerufen mit newTicket = "Frankfurt" und
 	 *	bahncard = true. Nun soll ein Array angelegt werden (und zurück
 	 *	gegeben werden, der folgende Werte enthält:
 	 *	{"Frankfurt","München","München (Bahncard)","Frankfurt (Bahncard)"}
@@ -154,7 +154,7 @@ public class Bahnticketautomat {
 	}
 
 	/**
-	 * Hier soll das Wechselgeld berechnet und in einem Array zurückgegeben 
+	 * Hier soll das Wechselgeld berechnet und in einem Array zurückgegeben
 	 * werden. Dabei soll die 1. Stelle des Arrays enthalten, wie viele 2€
 	 * Münzen, die 2. Stelle wie viele 1€ Münzen, die 3. Stelle, wie viele 50
 	 * Cent Münzen, die 4. Stelle, wie viele 20 Cent Münzen, die 5. Stelle,
@@ -168,7 +168,7 @@ public class Bahnticketautomat {
 	 * Dies würde dann in einem Array so aussehen: {1,0,1,0,1,1,0,0}.
 	 *
 	 * Viel Spaß!
-	 * 
+	 *
 	 * @return Array aus Wechselgeld, wie oben beschrieben
 	 */
 	public static int[] getChangeCoins() {
